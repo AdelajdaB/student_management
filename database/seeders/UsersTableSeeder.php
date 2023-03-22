@@ -1,0 +1,22 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class UsersTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        User::updateOrCreate(['id' => 1], [
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+            'password' => '$2y$10$fN8xT2YcnJnOp50ADMEgWe40GT22ti4yM6PGzbrEmLfQx6UBvcxiO' //Hashed Password
+        ]);
+    }
+}

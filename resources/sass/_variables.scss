@@ -1,0 +1,36 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+//Colors
+$light-green: #F3F6FA;
+$muted-green: #5F9EA0;
+$dark-green: #023020;
+$muted-red:  #CB4C4E;
+$muted-blue: #98b8d3;
+$dark-blue: #145DA0;
+
+.muted-green {
+    color: $muted-green;
+    &:hover {
+        color: $dark-green;
+    }
+}
+
+.muted-blue {
+    color: $muted-blue;
+    &:hover {
+        color: $dark-blue;
+    }
+}
+
+.muted-red {
+    color: $muted-red;
+    &:hover {
+        color: $muted-red;
+    }
+}

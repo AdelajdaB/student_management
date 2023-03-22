@@ -1,0 +1,122 @@
+.companies {
+    &-menu {
+        margin-left: auto;
+    }
+
+    &-table {
+        thead {
+            background-color: $muted-green;
+            color: white;
+            font-weight: 500;
+            tr {
+                &:hover {
+                    background-color: $muted-green;
+                    color: white;
+                }
+            }
+        }
+        tr {
+            &:hover {
+                background-color: $light-green;
+            }
+        }
+    }
+}
+
+.headline {
+    padding-bottom: 40px;
+
+    .create-button {
+        border: 1px solid $muted-green;
+        background: $muted-green;
+        color: white;
+        
+
+        &:hover {
+        background: transparent;
+        color: $muted-green;
+        }
+    }
+}
+
+.custom-button {
+    margin: 0 auto;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid $muted-green;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    background: $muted-green;
+    color: white;
+
+    &:hover {
+        border: 1px solid $muted-green;
+        background: transparent;
+        color: $muted-green;
+    }
+}
+
+.reverse-custom-button {
+    margin: 0 auto;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid $muted-green;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    background: transparent;
+    color: $muted-green;
+
+    &:hover {
+        border: 1px solid $muted-green;
+        background: $muted-green;
+        color: white;
+    }
+}
+
+.edit-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-cont {
+    display: flex;
+    justify-content: center;
+    img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+}
+
+.delete-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .update-logo-cont{
+    display: none;
+
+    &.show {
+        display: block;
+        position: absolute;
+        top: 10%;
+        left: 30%;
+        max-width: 500px;
+        padding: 30px;
+        background: lightgray;
+        border-radius: 0.75rem;
+    }
+
+    .close {
+        display: flex;
+        background: white;
+    }
+
+    .custom-button {
+        display: flex;
+        margin-right: 0;
+    }
+
+    .form-control-file {
+        display: block;
+    }
+ }
