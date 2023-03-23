@@ -3,7 +3,7 @@
 This project is a Laravel-based web application designed to manage companies and their employees. <br>
 With this project, you can add new companies and employees, view existing ones, update their details, and delete them.
 
-<br><h2><strong>Getting Started</strong></h2><br>
+<br><h2><strong>Getting Started</strong></h2>
 To get started with this project, you will need to follow the steps below:
 
 <ol>
@@ -36,7 +36,7 @@ To get started with this project, you will need to follow the steps below:
     </li>     
 </ol>
 
-<br><h2><strong>Features</strong></h2><br>
+<br><h2><strong>Features</strong></h2>
 This project comes with the following features:
 <h3><strong>Companies</strong></h3>
 <ul>
