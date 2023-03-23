@@ -13,7 +13,6 @@
 
             <div class="col-sm-6">
                 <h5>{{ $company->name }}</h5>
-                <h5>ID: {{ $company->id }}</h5>
                 <ul class="list-unstyled">
                     <li>
                         <strong>Email: </strong>{{ $company->email }}

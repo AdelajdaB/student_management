@@ -41,7 +41,15 @@
                     <tr>
                         <td>{{ $employee->firstname}}</td>
                         <td>{{ $employee->lastname}}</td>
-                        <td>{{ $employee->company}}</td>
+                        <td>
+                            @if ($comps->count())
+                            @foreach ($comps as $comp)
+                                @if ($comp->id === $employee->company_id)
+                                    {{$comp->name}}
+                                @endif
+                            @endforeach
+                        @endif
+                        </td>
                         <td>{{ $employee->email}}</td>
                         <td>{{ $employee->phone}}</td>
                         <td><a href="{{ route('employees.edit', ['employee' => $employee->id]) }}" class="text-decoration-none muted-blue">Edit</a></td>
@@ -52,7 +60,6 @@
                 </tbody>
 
             </table>
-            
             @endif
 
 

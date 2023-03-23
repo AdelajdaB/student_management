@@ -59,7 +59,13 @@
         
                         <div class="form-group mt-3">
                             <label for="company">Company</label>
-                            <input type="text" class="form-control" name="company" value="{{ $employee->company }}">
+                            <select class="form-control" name="company_id">
+                                @if ($comps->count())
+                                    @foreach ($comps as $comp)
+                                        <option value="{{$comp->id}}" @if($employee->company_id == $comp->id) selected @endif>{{$comp->name}}</option>
+                                    @endforeach
+                                @endif
+                            </select>
                         </div>
         
                         <div class="form-group mt-3">

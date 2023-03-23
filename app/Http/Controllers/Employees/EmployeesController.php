@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Employees;
 
 use App\Models\Employee;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Employees\StoreEmployeeRequest;
@@ -15,8 +16,9 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        //Show emplyees list
-        return view('employees.index', ['employees' => Employee::latest()->paginate(10)]);
+        //Show employees list
+        $comps = Company::all();
+        return view('employees.index', ['employees' => Employee::latest()->paginate(10)])->with('comps', $comps);
     }
 
     /**
@@ -25,7 +27,8 @@ class EmployeesController extends Controller
     public function create()
     {
         //Create new Employee Profile
-        return view('employees.create');
+        $comps = Company::all();
+        return view('employees.create')->with('comps', $comps);
     }
 
     /**
@@ -34,7 +37,7 @@ class EmployeesController extends Controller
     public function store(StoreEmployeeRequest $request)
     {
         //Store Employee Profile
-        $employee = Employee::create($request->only('firstname', 'lastname', 'company', 'email', 'phone'));
+        $employee = Employee::create($request->only('firstname', 'lastname', 'company_id', 'email', 'phone'));
 
         return redirect()->route('employees.dashboard')->with('success', 'Successfully created a New Employee Profile');
     }
@@ -53,7 +56,8 @@ class EmployeesController extends Controller
     public function edit(Employee $employee)
     {
         //Edit Employee Profile
-        return view('employees.edit', compact('employee'));
+        $comps = Company::all();
+        return view('employees.edit', compact('employee'))->with('comps', $comps);
     }
 
     /**

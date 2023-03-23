@@ -9,4 +9,8 @@ class Company extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    function getEmployees() {
+        return $this->hasMany('App\Models\Company');
+    }
 }

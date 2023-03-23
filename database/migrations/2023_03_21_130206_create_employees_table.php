@@ -16,8 +16,7 @@ return new class extends Migration
             $table -> string('firstname');
             $table -> string('lastname');
             $table -> string('email')->nullable();
-            $table -> string('company')->nullable();
-            $table -> foreignId('company_id')->constrained();
+            $table -> foreignId('company_id')->nullable()->references('id')->on('companies')->onUpdate('cascade')->onDelete('cascade');
             $table -> string('phone')->nullable();
             $table->timestamps();
         });

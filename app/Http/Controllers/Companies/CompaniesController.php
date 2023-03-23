@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Companies;
 
 use App\Models\Company;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
