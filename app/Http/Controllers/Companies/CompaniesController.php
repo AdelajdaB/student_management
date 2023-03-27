@@ -61,7 +61,8 @@ class CompaniesController extends Controller
     public function edit(Company $company)
     {
         //Edit Company Profile
-        return view('companies.edit', compact('company'));
+        $empls = Employee::all();
+        return view('companies.edit', compact('company'))->with('empls', $empls);
     }
 
     /**

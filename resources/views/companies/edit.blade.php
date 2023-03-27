@@ -92,6 +92,45 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-12">
+            <div class="card m-3 ms-0">
+                <div class="card-body">
+                    <h5>Modify Profile Data</h5>
+                    <hr>
+
+            {{-- Employees Table --}}
+            @if ($empls->count())
+            <table class="table table-hover employees-table">
+                <thead>
+                    <tr>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach ($empls as $empl)
+                        @if ($empl->company_id == $company->id)
+                            <tr>
+                                <td>{{ $empl->firstname}}</td>
+                                <td>{{ $empl->lastname}}</td>
+                                <td>{{ $empl->email}}</td>
+                                <td>{{ $empl->phone}}</td>
+                                <td><a href="{{ route('employees.edit', ['employee' => $empl->id]) }}" class="text-decoration-none muted-blue">Edit</a></td>
+                            </tr>
+                        @endif
+                    @endforeach
+                </tbody>
+
+            </table>
+            @endif
+                </div>
+            </div>
+        </div>
     </div>
 </div>
     
