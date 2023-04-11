@@ -13,7 +13,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     {{-- Favicon --}}
-    <link rel="icon" href="{{ url('images/favicon.svg') }}">
+    <link rel="icon" href="{{ url('images/logo.webp') }}">
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -23,6 +23,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+                    <img class="logo" src="/images/logo.webp" alt="logo">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -41,7 +42,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link custom-button employees-button" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link custom-button" href="{{ route('login') }}">Identifikohu</a>
                                 </li>
                             @endif
 
@@ -53,23 +54,23 @@
                         @else
 
                             <li class="nav-item menu-item pe-2">
-                                <a href="{{ route('companies.dashboard') }}" class="dropdown-item">Companies</a>
+                                <a href="{{ route('students.dashboard') }}" class="dropdown-item">Studentët</a>
                             </li>
 
-                            <li class="nav-item menu-item">
-                                <a href="{{ route('employees.dashboard') }}" class="dropdown-item">Employees</a>
+                            <li class="nav-item menu-item pe-2">
+                                <a href="{{ route('courses.dashboard') }}" class="dropdown-item">Lëndët</a>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    Profili
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        Dil
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

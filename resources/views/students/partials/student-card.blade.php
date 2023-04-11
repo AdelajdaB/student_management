@@ -3,27 +3,27 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="image-cont">
-                    @if ($company->logo)
-                        <img src="{{ Storage::url($company->logo)}}" alt="">
+                    {{-- @if ($student->logo)
+                        <img src="{{ Storage::url($student->logo)}}" alt="">
                     @else
                         <img src="/images/user.png" alt="" style="max-width: 100px;">
-                    @endif
+                    @endif --}}
                 </div>
             </div>
 
             <div class="col-sm-6">
-                <h5>{{ $company->name }}</h5>
+                <h5>{{ $student->name }}</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <strong>Email: </strong>{{ $company->email }}
+                        <strong>Email: </strong>{{ $student->email }}
                     </li>
                     <li>
-                        <strong>Website: </strong>{{ $company->website }}
+                        <strong>Website: </strong>{{ $student->website }}
                     </li>
                 </ul>
             </div>
             <div class="col-sm-3 edit-company">
-                <a href="{{ route('companies.edit', ['company' => $company->id]) }}" class="text-decoration-none muted-green">Edit</a>
+                <a href="{{ route('students.edit', ['student' => $student->id]) }}" class="text-decoration-none muted-green">Edit</a>
             </div>
         </div>
 

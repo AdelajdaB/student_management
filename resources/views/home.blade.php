@@ -22,15 +22,7 @@
         <div class="col-md-5 box companies-box me-3">
             <div class="box-container">
                 <div class="inner-box inner-box-company">
-                    <a href="{{ route('companies.dashboard') }}">Manage Companies</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-5 box employees-box">
-            <div class="box-container">
-                <div class="inner-box inner-box-employee ms-auto">
-                    <a href="{{ route('employees.dashboard') }}">Manage Employees</a>
+                    <a href="{{ route('students.dashboard') }}">Manage Students</a>
                 </div>
             </div>
         </div>

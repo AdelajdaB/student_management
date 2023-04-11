@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->nullable();
-            $table->text('logo')->nullable();
-            $table->string('website')->nullable();
+            $table->boolean('subscribe')->default(0);
+            $table->dateTime('time')->nullable();
+            $table->string('info')->nullable();
+            $table -> foreignId('course_id')->nullable()->references('id')->on('students')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('courses');
     }
 };

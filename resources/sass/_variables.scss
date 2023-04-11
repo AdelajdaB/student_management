@@ -13,6 +13,7 @@ $dark-green: #023020;
 $muted-red:  #CB4C4E;
 $muted-blue: #98b8d3;
 $dark-blue: #145DA0;
+$matte-black: #28282B;
 
 .muted-green {
     color: $muted-green;
@@ -27,6 +28,14 @@ $dark-blue: #145DA0;
         color: $dark-blue;
     }
 }
+
+.matte-black {
+    color: $matte-black;
+    &:hover {
+        color: $matte-black;
+    }
+}
+
 
 .muted-red {
     color: $muted-red;

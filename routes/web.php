@@ -17,12 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Companies
-Route::prefix('companies')->middleware('auth')->name('companies.')->group(base_path('routes/web/companies.php'));
+// Students
+Route::prefix('students')->middleware('auth')->name('students.')->group(base_path('routes/web/students.php'));
 
-//Employees
-Route::prefix('employees')->middleware('auth')->name('employees.')->group(base_path('routes/web/employees.php'));
+// Courses
+Route::prefix('courses')->middleware('auth')->name('courses.')->group(base_path('routes/web/courses.php'));

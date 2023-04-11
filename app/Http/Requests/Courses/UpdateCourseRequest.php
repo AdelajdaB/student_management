@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Companies;
+namespace App\Http\Requests\Courses;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProfileLogoRequest extends FormRequest
+class UpdateCourseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,10 @@ class UpdateProfileLogoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'required|max:1000'
+            'name' => 'required',
+            'subscribe' => 'nullable',
+            'time' => 'nullable',
+            'info' => 'nullable'
         ];
     }
 }

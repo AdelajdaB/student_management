@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
         User::updateOrCreate(['id' => 1], [
             'name' => 'Admin',
-            'email' => 'admin@admin.com',
+            'email' => 'admin',
             'password' => '$2y$10$fN8xT2YcnJnOp50ADMEgWe40GT22ti4yM6PGzbrEmLfQx6UBvcxiO' //Hashed Password
         ]);
     }
