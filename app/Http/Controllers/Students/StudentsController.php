@@ -39,7 +39,7 @@ class StudentsController extends Controller
 
         $student = Student::create($request->only('nid', 'emer' , 'mbiemer', 'fjalekalimi'));
 
-        return redirect()->route('students.dashboard')->with('success', 'Successfully created a New Student Profile');
+        return redirect()->route('students.dashboard')->with('success', 'Profili i studentit i krijuar me sukses');
     }
 
     /**
@@ -63,10 +63,15 @@ class StudentsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStudentRequest $request, Student $student)
+    public function update(UpdateStudentRequest $request, Student $student, Course $course)
     {
         $student->update($request->validated());
-        return back()->with('success', 'Successfully updated Student profile');
+
+        $course->update([
+            'subscribe' => $request->subscribe == 'on' ? 1 : 0,
+        ]);
+
+        return back()->with('success', 'Profili i studentit i modifikuar me sukses');
     }
 
 
@@ -78,7 +83,7 @@ class StudentsController extends Controller
 
         $student->delete();
 
-        return redirect()->route('students.dashboard')->with('success', 'Successfully deleted profile and all assets related to them.');
+        return redirect()->route('students.dashboard')->with('success', 'Profili i studentit i fshirë me sukses');
         
     }
 }

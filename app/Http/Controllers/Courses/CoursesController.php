@@ -32,11 +32,25 @@ class CoursesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCourseRequest $request)
+    public function store(Request $request)
     {
-        $course = Course::create($request->only('name', 'subscribe', 'time', 'info'));
+        // $course = Course::create($request->only('name', 'subscribe', 'time', 'info'));
 
-        return redirect()->route('courses.dashboard')->with('success', 'Successfully created a New Course Profile');
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'subscribe' => 'nullable',
+            'time' => 'nullable',
+            'info' => 'nullable'
+        ]);
+
+        $course = Course::create([
+            'name' => $request->name,
+            'subscribe' => $request->subscribe == 'on' ? 1 : 0,
+            'time' => $request->time,
+            'info' => $request->info
+        ]);
+
+        return redirect()->route('courses.dashboard')->with('success', 'Profili i kursit i krijuar me sukses');
     }
 
     /**
@@ -53,17 +67,30 @@ class CoursesController extends Controller
     public function edit(Course $course)
     {
         //Edit Course Profile
-        $course->subscribe = $course->has('subscribe');
         return view('courses.edit', compact('course'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCourseRequest $request, Course $course)
+    public function update(Request $request, Course $course)
     {
-        $course->update($request->validated());
-        return back()->with('success', 'Successfully updated Course profile');
+        // $course->update($request->validated());
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'subscribe' => 'nullable',
+            'time' => 'nullable',
+            'info' => 'nullable'
+        ]);
+
+        $course->update([
+            'name' => $request->name,
+            'subscribe' => $request->subscribe == 'on' ? 1 : 0,
+            'time' => $request->time,
+            'info' => $request->info
+        ]);
+        return back()->with('success', 'Profili i kursit i modifikuar me sukses');
     }
 
 
@@ -75,7 +102,7 @@ class CoursesController extends Controller
 
         $course->delete();
 
-        return redirect()->route('courses.dashboard')->with('success', 'Successfully deleted profile and all assets related to them.');
+        return redirect()->route('courses.dashboard')->with('success', 'Profili i kursit i fshirë me sukses.');
         
     }
 }

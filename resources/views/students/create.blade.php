@@ -40,8 +40,8 @@
 
                 
                 <div class="form-group mt-3">
-                    <label for="fjalekalim">Fjalëkalimi</label>
-                    <input type="password" minlength="8" class="form-control" name="fjalekalim" required>
+                    <label for="fjalekalim">Fjalëkalimi <span>(Formati: Minimumi 8 karaktere dhe të paktën një shkronjë e madhe dhe një numër)</label>
+                    <input type="password" minlength="8" class="form-control" name="fjalekalim" pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$" required>
                 </div>
 
                 <a href="{{ route ('students.dashboard') }}" class="btn btn-danger btn-block mt-3 me-3 float-start">Anullo</a>

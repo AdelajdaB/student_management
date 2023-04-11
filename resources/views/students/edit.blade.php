@@ -94,7 +94,7 @@
                                             <tr>
                                                 <td>{{ $cr->name}}</td>
                                                 <td>
-                                                    <input type="checkbox" class="subscribe-input" id="{{$cr->name}}" name="{{$cr->name}}" {{ old('subscribe') ? 'checked="checked"' : '' }} />
+                                                    <input type="checkbox" name="subscribe" class="subscribe" id="{{$cr->name}}" {{ $cr->subscribe == 1 ?'checked':'' }}/>
                                                 </td>
                                                 <td>{{ $cr->time}}</td>
                                                 <td>{{ $cr->info}}</td>
@@ -106,8 +106,8 @@
                         </div>
                         
                         <div class="form-group mt-3">
-                            <label for="fjalekalim">Fjalëkalimi</label>
-                            <input type="password" minlength="8" class="form-control" name="fjalekalim"  value="{{ $student->fjalekalim }}" required>
+                            <label for="fjalekalim">Fjalëkalimi <span>(Rifut fjalëkalimin aktual ose fjalëkalimin e ri që do të përdoresh)</span></label>
+                            <input type="password" minlength="8" class="form-control" name="fjalekalim"  value="{{ $student->fjalekalim }}" pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$"  required>
                         </div>
 
                         <div class="buttons">

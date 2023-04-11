@@ -51,9 +51,9 @@
                             </div>                           
                                      
                             <div class="form-group mt-3">
-                                <label for="password">Fjalekalimi</label>
+                                <label for="password">Fjalëkalimi <span>(Formati: Minimumi 8 karaktere dhe të paktën një shkronjë e madhe dhe një numër)</label>
                                 <div>
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input id="password" type="password" minlength="8" class="form-control @error('password') is-invalid @enderror" name="password"  pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$" required autocomplete="new-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
