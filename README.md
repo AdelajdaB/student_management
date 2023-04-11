@@ -9,7 +9,7 @@ To get started with this project, you will need to follow the steps below:
 <ol>
     <li>
     <strong> Clone this repository to your local machine using the following command: </strong><br>
-        Copy code <code>git clone https://github.com/AdelajdaB/student_management_system.git</code>
+        Copy code <code>git clone https://github.com/AdelajdaB/student_management.git</code>
     </li>
     <li>
         <strong>Install all the dependencies using composer: </strong>
