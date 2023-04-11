@@ -53,6 +53,7 @@ class CoursesController extends Controller
     public function edit(Course $course)
     {
         //Edit Course Profile
+        $course->subscribe = $course->has('subscribe');
         return view('courses.edit', compact('course'));
     }
 

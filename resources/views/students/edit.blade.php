@@ -93,7 +93,9 @@
                                         @foreach ($crs as $cr)
                                             <tr>
                                                 <td>{{ $cr->name}}</td>
-                                                <td><input type="checkbox" id="{{$cr->name}}" name="{{$cr->name}}"></td>
+                                                <td>
+                                                    <input type="checkbox" class="subscribe-input" id="{{$cr->name}}" name="{{$cr->name}}" {{ old('subscribe') ? 'checked="checked"' : '' }} />
+                                                </td>
                                                 <td>{{ $cr->time}}</td>
                                                 <td>{{ $cr->info}}</td>
                                             </tr>
@@ -109,7 +111,7 @@
                         </div>
 
                         <div class="buttons">
-                            <button class="btn custom-button mt-3 float-end save">Ruaj ndryshimet</button>
+                            <button class="btn custom-button mt-3 float-end save" id="save">Ruaj ndryshimet</button>
                         </div>
         
                         <a href="{{ route ('students.dashboard') }}" class="btn btn-danger btn-block mt-3 me-3">Anullo</a>
