@@ -24,8 +24,14 @@ To get started with this project, you will need to follow the steps below:
         <code>php artisan key:generate</code>
     </li>
     <li>
-        <strong>Create a new database for this project and update your .env file with your database credentials. </strong>
+        <strong>Create a new database for this project and update your .env file with your database credentials: </strong> <br>
+        <code>mysql -u root</code> <br>
+        <code>create database name;</code> (same database name is set in .env file)
     </li>
+     <li>
+        <strong>Seed created users: </strong>
+        <code>php artisan db:seed</code>
+    </li>    
     <li>
         <strong>Run the database migrations: </strong>
         <code>php artisan migrate</code>
@@ -33,23 +39,39 @@ To get started with this project, you will need to follow the steps below:
     <li>
         <strong>You can now start the development server using the following command: </strong>
         <code>php artisan serve</code>
-    </li>     
+    </li>
+    <li>
+        <strong>Install npm: </strong>
+        <code>npm install</code>
+    </li> 
+     <li>
+        <strong>Start npm using the following command: </strong>
+        <code>npm run dev</code>
+    </li>            
 </ol>
 
 <br><h2><strong>Features</strong></h2>
 This project comes with the following features:
 <h3><strong>Student</strong></h3>
 <ul>
-    <li>View a list of all students</li>
+    <li>View a list of all students(NID, Name, Surname, Number of courses subscribed)</li>
     <li>Add new student profile (register)</li>
-    <li>Edit existing student profile (When updating a student profile recursively are updated also courses profiles that were related with that specific student)</li>
-    <li>Delete existing student profile (When deleting a student profile recursively are deleted also courses profiles that were related with that specific student)</li>
-</ul> <br>
+    <li>Edit existing student profile(Edit also Subscribe checkbox from Course-Subscribe relation)</li>
+    <li>Delete existing student profile(Option created on Edit view)</li>
+    <li>Related with Courses table</li>
+</ul>
 
 <h3><strong>Courses</strong></h3>
 <ul>
     <li>Appears on the edit view of Edit Student</li>
     <li>Shows a table of courses, date modified, subscribed and general information</li>
+    <li>Related with Subscribe table</li>
+</ul>
+
+<h3><strong>Subscribe</strong></h3>
+<ul>
+    <li>Contains value of boolean</li>
+    <li>Contains last updated time of subscribe</li>
 </ul>
 
 <br><h2><strong>License</strong></h2>

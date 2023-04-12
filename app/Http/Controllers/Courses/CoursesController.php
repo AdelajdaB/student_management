@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Courses;
 
 use App\Models\Course;
+use App\Models\Subscribe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;

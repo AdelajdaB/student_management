@@ -27,7 +27,6 @@
              <thead>
                  <tr>
                      <td>Lënda</td>
-                     <td>Subscribe</td>
                      <td>Date</td>
                      <td>Informacion</td>
                      <td>Modifiko</td>
@@ -38,8 +37,7 @@
                  @foreach ($courses as $course)
                  <tr>
                      <td>{{ $course->name}}</td>
-                     <td>{{ $course->subscribe}}</td>
-                     <td>{{ $course->time}}</td>
+                     <td>{{ $course->updated_at}}</td>
                      <td>{{ $course->info}}</td>
                      <td><a href="{{ route('courses.edit', ['course' => $course->id]) }}" class="text-decoration-none matte-black">Edit</a></td>
                  </tr>

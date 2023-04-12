@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('subscribe')->default(false);
+            $table->boolean('subscribe')->nullable()->default(false);
             $table->dateTime('time')->nullable();
             $table->string('info')->nullable();
             $table -> foreignId('course_id')->nullable()->references('id')->on('students')->onUpdate('cascade')->onDelete('cascade');

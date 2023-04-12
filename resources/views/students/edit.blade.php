@@ -94,9 +94,9 @@
                                             <tr>
                                                 <td>{{ $cr->name}}</td>
                                                 <td>
-                                                    <input type="checkbox" name="subscribe" class="subscribe" id="{{$cr->name}}" {{ $cr->subscribe == 1 ?'checked':'' }}/>
+                                                    <input type="checkbox" name="subscribe" class="subscribe" id="{{$cr->name}}" value="1" {{ old('subscribe') == 1 ? 'checked' : '' }}/>
                                                 </td>
-                                                <td>{{ $cr->time}}</td>
+                                                <td>{{ $cr->updated_at}}</td>
                                                 <td>{{ $cr->info}}</td>
                                             </tr>
                                     @endforeach

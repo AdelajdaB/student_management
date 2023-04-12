@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Students;
 
 use App\Models\Student;
 use App\Models\Course;
+use App\Models\Subscribe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -38,7 +39,7 @@ class StudentsController extends Controller
     {
 
         $student = Student::create($request->only('nid', 'emer' , 'mbiemer', 'fjalekalimi'));
-
+        
         return redirect()->route('students.dashboard')->with('success', 'Profili i studentit i krijuar me sukses');
     }
 
@@ -57,6 +58,7 @@ class StudentsController extends Controller
     {
         //Edit Student Profile
         $crs = Course::all();
+        $subs = Subscribe::all();
         return view('students.edit', compact('student'))->with('crs', $crs);
     }
 
@@ -66,10 +68,6 @@ class StudentsController extends Controller
     public function update(UpdateStudentRequest $request, Student $student, Course $course)
     {
         $student->update($request->validated());
-
-        $course->update([
-            'subscribe' => $request->subscribe == 'on' ? 1 : 0,
-        ]);
 
         return back()->with('success', 'Profili i studentit i modifikuar me sukses');
     }

@@ -28,6 +28,8 @@
                     <input type="text" class="form-control" name="name">
                 </div>
 
+                <input type="checkbox" name="state" class="subscribe" value="1" {{ old('state') == 1 ? 'checked' : '' }} style="display:none;"/>
+
                 <div class="form-group mt-3">
                     <label for="info">Informacione</label>
                     <textarea type="text" class="form-control" rows="4" cols="50" name="info" placeholder="Të dhëna mbi lënden"></textarea>
